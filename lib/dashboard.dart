@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:neuwall/fullwallpaperview.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -188,7 +189,17 @@ class _DashboardState extends State<Dashboard> {
                     shrinkWrap: true,
                     itemCount: popularData.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Neumorphic(
+                      return NeumorphicButton(
+                        padding: EdgeInsets.all(0),
+                        onClick: () {
+                          print(index);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    WallpaperView(data: popularData[index]),
+                              ));
+                        },
                         margin:
                             EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         boxShape: NeumorphicBoxShape.roundRect(
@@ -232,23 +243,21 @@ class _DashboardState extends State<Dashboard> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
                                     Neumorphic(
-                                      boxShape: NeumorphicBoxShape.roundRect(
-                                          BorderRadius.circular(100)),
+                                      padding: EdgeInsets.all(0),
+                                      boxShape: NeumorphicBoxShape.circle(),
                                       style: NeumorphicStyle(
                                           color: Color(0xFFE4E6F5),
                                           depth: 2,
                                           shape: NeumorphicShape.flat),
                                       child: CircleAvatar(
-                                        radius: height * 0.03,
                                         backgroundColor: Color(0xFFE4E6F5),
                                         child: Neumorphic(
+                                          padding: EdgeInsets.all(0),
                                           style: NeumorphicStyle(
                                               color: Color(0xFFEBEEFF),
                                               depth: 0,
                                               shape: NeumorphicShape.flat),
-                                          boxShape:
-                                              NeumorphicBoxShape.roundRect(
-                                                  BorderRadius.circular(100)),
+                                          boxShape: NeumorphicBoxShape.circle(),
                                           child: Image.network(
                                             popularData[index].artistUrl,
                                             fit: BoxFit.cover,
@@ -303,7 +312,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ),
               SizedBox(
-                height: height * 0.01,
+                height: height * 0.02,
               ),
               SizedBox(
                 height: height * 0.06,
@@ -311,7 +320,11 @@ class _DashboardState extends State<Dashboard> {
                   scrollDirection: Axis.horizontal,
                   itemCount: categories.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Neumorphic(
+                    return NeumorphicButton(
+                        padding: EdgeInsets.all(0),
+                        onClick: () {
+                          print(categories[index]);
+                        },
                         style: NeumorphicStyle(
                             //  color: Color(0xFFECECF6),
                             color: Color(0xFFEBEEFF),
@@ -359,7 +372,17 @@ class _DashboardState extends State<Dashboard> {
                     shrinkWrap: true,
                     itemCount: newData.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Neumorphic(
+                      return NeumorphicButton(
+                        padding: EdgeInsets.all(0),
+                        onClick: () {
+                          print(newData[index].artistName);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    WallpaperView(data: newData[index]),
+                              ));
+                        },
                         margin:
                             EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         boxShape: NeumorphicBoxShape.roundRect(
