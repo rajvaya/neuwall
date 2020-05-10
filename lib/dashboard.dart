@@ -182,13 +182,6 @@ class _DashboardState extends State<Dashboard> {
                     color: Color(0xff46567A),
                     fontWeight: FontWeight.w600,
                     fontSize: 24,
-//                  shadows: [
-//                    Shadow(
-//                        color: Color(0xff46567A),
-//                        offset: Offset(1.0, 1.0),
-//                        blurRadius: 2)
-//                  ],
-                    // color: NeumorphicTheme.defaultTextColor(context),
                   ),
                 ),
               ),
@@ -196,8 +189,8 @@ class _DashboardState extends State<Dashboard> {
             SizedBox(
               height: height * 0.01,
             ),
-            SizedBox(
-              height: height * 0.3,
+            Container(
+              height: height * 0.31,
               child: Center(
                 child: ListView.builder(
                   physics: BouncingScrollPhysics(),
@@ -242,9 +235,9 @@ class _DashboardState extends State<Dashboard> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           mainAxisAlignment: MainAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             Container(
+                              height: height * 0.3 * 0.7,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16),
                                 color: Color(0xFFEBEEFF),
@@ -262,10 +255,9 @@ class _DashboardState extends State<Dashboard> {
                                   ),
                                 ),
                               ),
-                              height: height * 0.3 * 0.7,
                             ),
                             Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 8),
+                              padding: const EdgeInsets.all(10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -289,9 +281,13 @@ class _DashboardState extends State<Dashboard> {
                                         boxShape: NeumorphicBoxShape.circle(),
                                         child: Hero(
                                           tag: "a" + "hero1" + index.toString(),
-                                          child: Image.network(
-                                            popularData[index].artistUrl,
-                                            fit: BoxFit.cover,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            child: Image.network(
+                                              popularData[index].artistUrl,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -404,8 +400,8 @@ class _DashboardState extends State<Dashboard> {
             SizedBox(
               height: height * 0.01,
             ),
-            SizedBox(
-              height: height * 0.3,
+            Container(
+              height: height * 0.31,
               child: Center(
                 child: ListView.builder(
                   physics: BouncingScrollPhysics(),
@@ -474,7 +470,7 @@ class _DashboardState extends State<Dashboard> {
                               height: height * 0.3 * 0.7,
                             ),
                             Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 8),
+                              padding: const EdgeInsets.all(10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -498,9 +494,13 @@ class _DashboardState extends State<Dashboard> {
                                         boxShape: NeumorphicBoxShape.circle(),
                                         child: Hero(
                                           tag: "a" + "hero2" + index.toString(),
-                                          child: Image.network(
-                                            newData[index].artistUrl,
-                                            fit: BoxFit.cover,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(100.0),
+                                            child: Image.network(
+                                              newData[index].artistUrl,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),

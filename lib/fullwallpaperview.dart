@@ -88,9 +88,12 @@ class _WallpaperViewState extends State<WallpaperView> {
                             boxShape: NeumorphicBoxShape.circle(),
                             child: Hero(
                               tag: "a" + widget.tag,
-                              child: Image.network(
-                                widget.data.artistUrl,
-                                fit: BoxFit.cover,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(100),
+                                child: Image.network(
+                                  widget.data.artistUrl,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
