@@ -158,6 +158,7 @@ class _DashboardState extends State<Dashboard> {
                       errorBorder: InputBorder.none,
                       disabledBorder: InputBorder.none,
                       suffixIcon: IconButton(
+                        onPressed: () {},
                         icon: Icon(Icons.search,
                             size: 30, color: Color(0xff415FFF)),
                       ),
@@ -213,7 +214,7 @@ class _DashboardState extends State<Dashboard> {
                             MaterialPageRoute(
                               builder: (context) => WallpaperView(
                                 data: popularData[index],
-                                index: index,
+                                tag: "hero1" + index.toString(),
                               ),
                             ));
                       },
@@ -253,7 +254,7 @@ class _DashboardState extends State<Dashboard> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Hero(
-                                    tag: "hero" + index.toString(),
+                                    tag: "hero1" + index.toString(),
                                     child: Image.network(
                                       popularData[index].wallUrl,
                                       fit: BoxFit.cover,
@@ -286,9 +287,12 @@ class _DashboardState extends State<Dashboard> {
                                             depth: 0,
                                             shape: NeumorphicShape.flat),
                                         boxShape: NeumorphicBoxShape.circle(),
-                                        child: Image.network(
-                                          popularData[index].artistUrl,
-                                          fit: BoxFit.cover,
+                                        child: Hero(
+                                          tag: "a" + "hero1" + index.toString(),
+                                          child: Image.network(
+                                            popularData[index].artistUrl,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -354,6 +358,8 @@ class _DashboardState extends State<Dashboard> {
                           //  color: Color(0xFFECECF6),
                           color: Color(0xFFEBEEFF),
                           depth: 2,
+                          shadowDarkColor: Color(0xFF415FFF).withOpacity(0.6),
+                          intensity: 5,
                           shape: NeumorphicShape.flat),
                       margin: (index != 0)
                           ? EdgeInsets.only(
@@ -380,7 +386,7 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
             SizedBox(
-              height: height * 0.04,
+              height: height * 0.02,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -416,7 +422,7 @@ class _DashboardState extends State<Dashboard> {
                             MaterialPageRoute(
                               builder: (context) => WallpaperView(
                                 data: newData[index],
-                                index: index,
+                                tag: "hero2" + index.toString(),
                               ),
                             ));
                       },
@@ -456,9 +462,12 @@ class _DashboardState extends State<Dashboard> {
                                 padding: const EdgeInsets.all(10.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    newData[index].wallUrl,
-                                    fit: BoxFit.cover,
+                                  child: Hero(
+                                    tag: "hero2" + index.toString(),
+                                    child: Image.network(
+                                      newData[index].wallUrl,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -487,9 +496,12 @@ class _DashboardState extends State<Dashboard> {
                                             depth: 0,
                                             shape: NeumorphicShape.flat),
                                         boxShape: NeumorphicBoxShape.circle(),
-                                        child: Image.network(
-                                          newData[index].artistUrl,
-                                          fit: BoxFit.cover,
+                                        child: Hero(
+                                          tag: "a" + "hero2" + index.toString(),
+                                          child: Image.network(
+                                            newData[index].artistUrl,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ),

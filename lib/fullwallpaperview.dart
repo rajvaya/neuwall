@@ -5,8 +5,8 @@ import 'package:neuwall/dashboard.dart';
 
 class WallpaperView extends StatefulWidget {
   final WallpaperData data;
-  final int index;
-  const WallpaperView({Key key, this.data, this.index}) : super(key: key);
+  final String tag;
+  const WallpaperView({Key key, this.data, this.tag}) : super(key: key);
   @override
   _WallpaperViewState createState() => _WallpaperViewState();
 }
@@ -22,9 +22,12 @@ class _WallpaperViewState extends State<WallpaperView> {
           child: Container(
             width: width,
             height: height * 0.82,
-            child: Image.network(
-              widget.data.wallUrl,
-              fit: BoxFit.cover,
+            child: Hero(
+              tag: widget.tag,
+              child: Image.network(
+                widget.data.wallUrl,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
@@ -84,7 +87,7 @@ class _WallpaperViewState extends State<WallpaperView> {
                                 shape: NeumorphicShape.flat),
                             boxShape: NeumorphicBoxShape.circle(),
                             child: Hero(
-                              tag: "hero" + widget.index.toString(),
+                              tag: "a" + widget.tag,
                               child: Image.network(
                                 widget.data.artistUrl,
                                 fit: BoxFit.cover,
