@@ -5,7 +5,8 @@ import 'package:neuwall/dashboard.dart';
 
 class WallpaperView extends StatefulWidget {
   final WallpaperData data;
-  const WallpaperView({Key key, this.data}) : super(key: key);
+  final int index;
+  const WallpaperView({Key key, this.data, this.index}) : super(key: key);
   @override
   _WallpaperViewState createState() => _WallpaperViewState();
 }
@@ -34,15 +35,25 @@ class _WallpaperViewState extends State<WallpaperView> {
           height: width * 0.12,
           child: NeumorphicButton(
             padding: EdgeInsets.all(0),
-            child: Icon(Icons.arrow_back),
+            child: Icon(
+              Icons.arrow_back,
+              size: width * 0.08,
+            ),
             onClick: () => Navigator.of(context).pop(),
             boxShape: NeumorphicBoxShape.circle(),
+            style: NeumorphicStyle(
+                depth: 4,
+                intensity: 0.4,
+                shape: NeumorphicShape.flat,
+                color: Color(0xFFEBEEFF),
+                shadowDarkColor: Color(0xFF415FFF).withOpacity(1),
+                shadowLightColor: Colors.white),
           ),
         ),
         Positioned(
           bottom: 0.0,
           child: Container(
-            color: Color(0xFFECECF6),
+            color: Color(0xFFEBEEFF),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -59,11 +70,11 @@ class _WallpaperViewState extends State<WallpaperView> {
                         margin: EdgeInsets.all(0),
                         boxShape: NeumorphicBoxShape.circle(),
                         style: NeumorphicStyle(
-                            color: Color(0xFFE4E6F5),
+                            color: Color(0xFFEBEEFF),
                             depth: 2,
                             shape: NeumorphicShape.flat),
                         child: CircleAvatar(
-                          backgroundColor: Color(0xFFE4E6F5),
+                          backgroundColor: Color(0xFFEBEEFF),
                           child: Neumorphic(
                             margin: EdgeInsets.all(0),
                             padding: EdgeInsets.all(0),
@@ -72,9 +83,12 @@ class _WallpaperViewState extends State<WallpaperView> {
                                 depth: 0,
                                 shape: NeumorphicShape.flat),
                             boxShape: NeumorphicBoxShape.circle(),
-                            child: Image.network(
-                              widget.data.artistUrl,
-                              fit: BoxFit.cover,
+                            child: Hero(
+                              tag: "hero" + widget.index.toString(),
+                              child: Image.network(
+                                widget.data.artistUrl,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -119,7 +133,8 @@ class _WallpaperViewState extends State<WallpaperView> {
                         boxShape: NeumorphicBoxShape.circle(),
                         style: NeumorphicStyle(
                           depth: 5,
-                          color: Color(0xFFEEEEF8),
+                          color: Color(0xFFEBEEFF),
+                          shadowDarkColor: Color(0xFF415FFF).withOpacity(0.8),
                         ),
                       ),
                     ),
@@ -140,7 +155,8 @@ class _WallpaperViewState extends State<WallpaperView> {
                         boxShape: NeumorphicBoxShape.circle(),
                         style: NeumorphicStyle(
                           depth: 5,
-                          color: Color(0xFFEEEEF8),
+                          shadowDarkColor: Color(0xFF415FFF).withOpacity(0.8),
+                          color: Color(0xFFEBEEFF),
                         ),
                       ),
                     ),
@@ -165,6 +181,7 @@ class _WallpaperViewState extends State<WallpaperView> {
                         style: NeumorphicStyle(
                           depth: 5,
                           color: Color(0xFF415FFF),
+                          shadowDarkColor: Color(0xFF415FFF).withOpacity(1),
                         ),
                       ),
                     )
