@@ -91,451 +91,510 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      backgroundColor: Color(0xFFEBEEFF),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(
-              height: MediaQuery.of(context).padding.top,
-            ),
-            SizedBox(
-              height: height * 0.05,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: SizedBox(
-                child: Text(
-                  "Hi Raj!",
-                  style: TextStyle(
-                    color: Color(0xff46567A),
-                    fontWeight: FontWeight.w600,
-                    fontSize: 28,
+    return Container(
+      decoration: new BoxDecoration(
+          gradient: new LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [
+          Color(0xffF8F9FF),
+          Color(0xffE5E6F1),
+        ],
+      )),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(
+                height: MediaQuery.of(context).padding.top,
+              ),
+              SizedBox(
+                height: height * 0.05,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: SizedBox(
+                  child: Text(
+                    "Hi Raj!",
+                    style: TextStyle(
+                      color: Color(0xff46567A),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 28,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: height * 0.02,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: SizedBox(
-                child: Text(
-                  "Best Wallpapers for you.",
-                  style: TextStyle(
-                    color: Color(0xff415FFF),
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24,
+              SizedBox(
+                height: height * 0.02,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: SizedBox(
+                  child: Text(
+                    "Best Wallpapers for you.",
+                    style: TextStyle(
+                      color: Color(0xff415FFF),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: height * 0.03,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: Neumorphic(
-                boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(16)),
-                style: NeumorphicStyle(
-                  color: Color(0xFFEBEEFF),
-                  depth: -3,
-                  shadowLightColorEmboss: Colors.white,
-                  shadowDarkColorEmboss: Color(0xFF415FFF).withOpacity(0.8),
-                ),
-                padding: EdgeInsets.symmetric(vertical: 6, horizontal: 20),
-                child: TextField(
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                      suffixIcon: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.search,
-                            size: 30, color: Color(0xff415FFF)),
+              SizedBox(
+                height: height * 0.03,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: Container(
+                  decoration: new BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      gradient: new LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        stops: [0.0, 1.0],
+                        colors: [
+                          Color(0xffE6E7ED),
+                          Color(0xffF7F8FA),
+                        ],
+                      )),
+                  child: Neumorphic(
+                    boxShape:
+                        NeumorphicBoxShape.roundRect(BorderRadius.circular(16)),
+                    style: NeumorphicStyle(
+                      color: Colors.transparent,
+                      depth: -3,
+                      shadowLightColorEmboss: Colors.white,
+                      shadowDarkColorEmboss: Color(0xFF415FFF).withOpacity(0.8),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 6, horizontal: 20),
+                    child: Container(
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.search,
+                                  size: 30, color: Color(0xff415FFF)),
+                            ),
+                            hintText: "Search for wallpapers",
+                            hintStyle: TextStyle(
+                                color: Color(0xff46567A),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500)),
                       ),
-                      hintText: "Search for wallpapers",
-                      hintStyle: TextStyle(
-                          color: Color(0xff46567A),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500)),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: height * 0.03,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: SizedBox(
-                child: Text(
-                  "Popular",
-                  style: TextStyle(
-                    color: Color(0xff46567A),
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: height * 0.01,
-            ),
-            Container(
-              height: height * 0.31,
-              child: Center(
-                child: ListView.builder(
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemCount: popularData.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return NeumorphicButton(
-                      padding: EdgeInsets.all(0),
-                      onClick: () {
-                        print(index);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => WallpaperView(
-                                data: popularData[index],
-                                tag: "hero1" + index.toString(),
-                              ),
-                            ));
-                      },
-                      margin: (index != 0)
-                          ? EdgeInsets.only(
-                              left: 8,
-                              right: (index == popularData.length - 1) ? 20 : 8,
-                              top: 8,
-                              bottom: 8)
-                          : EdgeInsets.only(
-                              left: 20, right: 8, top: 8, bottom: 8),
-                      boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(16)),
-                      style: NeumorphicStyle(
-                          color: Color(0xFFEBEEFF),
-                          depth: 3,
-                          shadowLightColor: Color(0xFFFFFFFF),
-                          shadowDarkColor: Color(0xFF415FFF).withOpacity(0.6),
-                          intensity: 5,
-                          lightSource: LightSource.topLeft,
-                          shape: NeumorphicShape.flat),
-                      child: Container(
-                        color: Color(0xFFEBEEFF),
-                        width: width * 0.5,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: <Widget>[
-                            Container(
-                              height: height * 0.3 * 0.7,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                color: Color(0xFFEBEEFF),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Hero(
-                                    tag: "hero1" + index.toString(),
-                                    child: Image.network(
-                                      popularData[index].wallUrl,
-                                      fit: BoxFit.cover,
+              SizedBox(
+                height: height * 0.03,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: SizedBox(
+                  child: Text(
+                    "Popular",
+                    style: TextStyle(
+                      color: Color(0xff46567A),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              Container(
+                height: height * 0.31,
+                child: Center(
+                  child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: popularData.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return NeumorphicButton(
+                        padding: EdgeInsets.all(0),
+                        onClick: () {
+                          print(index);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => WallpaperView(
+                                  data: popularData[index],
+                                  tag: "hero1" + index.toString(),
+                                ),
+                              ));
+                        },
+                        margin: (index != 0)
+                            ? EdgeInsets.only(
+                                left: 8,
+                                right:
+                                    (index == popularData.length - 1) ? 20 : 8,
+                                top: 8,
+                                bottom: 8)
+                            : EdgeInsets.only(
+                                left: 20, right: 8, top: 8, bottom: 8),
+                        boxShape: NeumorphicBoxShape.roundRect(
+                            BorderRadius.circular(16)),
+                        style: NeumorphicStyle(
+                            color: Colors.transparent,
+                            depth: 3,
+                            shadowLightColor: Color(0xFFFFFFFF),
+                            shadowDarkColor: Color(0xFF415FFF).withOpacity(0.6),
+                            intensity: 5,
+                            lightSource: LightSource.topLeft,
+                            shape: NeumorphicShape.flat),
+                        pressed: false,
+                        child: Container(
+                          // color: Colors.red,
+                          decoration: new BoxDecoration(
+                              gradient: new LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Color(0xffF7F8FF),
+                              Color(0xffE7E8F3),
+                            ],
+                          )),
+                          width: width * 0.5,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Container(
+                                height: height * 0.3 * 0.7,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: Colors.transparent,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Hero(
+                                      tag: "hero1" + index.toString(),
+                                      child: Image.network(
+                                        popularData[index].wallUrl,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Neumorphic(
-                                    padding: EdgeInsets.all(0),
-                                    boxShape: NeumorphicBoxShape.circle(),
-                                    style: NeumorphicStyle(
-                                        color: Color(0xFFE4E6F5),
-                                        depth: 2,
-                                        shape: NeumorphicShape.flat),
-                                    child: CircleAvatar(
-                                      backgroundColor: Color(0xFFE4E6F5),
-                                      child: Neumorphic(
-                                        padding: EdgeInsets.all(0),
-                                        style: NeumorphicStyle(
-                                            color: Color(0xFFEBEEFF),
-                                            depth: 0,
-                                            shape: NeumorphicShape.flat),
-                                        boxShape: NeumorphicBoxShape.circle(),
-                                        child: Hero(
-                                          tag: "a" + "hero1" + index.toString(),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(100),
-                                            child: Image.network(
-                                              popularData[index].artistUrl,
-                                              fit: BoxFit.cover,
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: <Widget>[
+                                    Neumorphic(
+                                      padding: EdgeInsets.all(0),
+                                      boxShape: NeumorphicBoxShape.circle(),
+                                      style: NeumorphicStyle(
+                                          color: Color(0xFFE4E6F5),
+                                          depth: 2,
+                                          shape: NeumorphicShape.flat),
+                                      child: CircleAvatar(
+                                        backgroundColor: Color(0xFFE4E6F5),
+                                        child: Neumorphic(
+                                          padding: EdgeInsets.all(0),
+                                          style: NeumorphicStyle(
+                                              color: Color(0xFFEBEEFF),
+                                              depth: 0,
+                                              shape: NeumorphicShape.flat),
+                                          boxShape: NeumorphicBoxShape.circle(),
+                                          child: Hero(
+                                            tag: "a" +
+                                                "hero1" +
+                                                index.toString(),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                              child: Image.network(
+                                                popularData[index].artistUrl,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: width * 0.5 * 0.05,
-                                  ),
-                                  Flexible(
-                                    child: Text(
-                                      popularData[index].artistName,
-                                      style: TextStyle(
-                                        color: Color(0xff46567A),
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 18,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
+                                    SizedBox(
+                                      width: width * 0.5 * 0.05,
                                     ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            SizedBox(
-              height: height * 0.03,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: SizedBox(
-                child: Text(
-                  "Categories",
-                  style: TextStyle(
-                    color: Color(0xff46567A),
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: height * 0.02,
-            ),
-            SizedBox(
-              height: height * 0.06,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                physics: BouncingScrollPhysics(),
-                itemCount: categories.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return NeumorphicButton(
-                      padding: EdgeInsets.all(0),
-                      onClick: () {
-                        print(categories[index]);
-                      },
-                      style: NeumorphicStyle(
-                          //  color: Color(0xFFECECF6),
-                          color: Color(0xFFEBEEFF),
-                          depth: 2,
-                          shadowDarkColor: Color(0xFF415FFF).withOpacity(0.6),
-                          intensity: 5,
-                          shape: NeumorphicShape.flat),
-                      margin: (index != 0)
-                          ? EdgeInsets.only(
-                              left: 8,
-                              right: (index == categories.length - 1) ? 20 : 8,
-                              top: 8,
-                              bottom: 8)
-                          : EdgeInsets.only(
-                              left: 20, right: 8, top: 8, bottom: 8),
-                      boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(8)),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 6),
-                        child: Center(
-                          child: Text(
-                            categories[index],
-                            style: TextStyle(
-                                color: Color(0xFF415FFF),
-                                fontWeight: FontWeight.w500),
+                                    Flexible(
+                                      child: Text(
+                                        popularData[index].artistName,
+                                        style: TextStyle(
+                                          color: Color(0xff46567A),
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 18,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                         ),
-                      ));
-                },
-              ),
-            ),
-            SizedBox(
-              height: height * 0.02,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: SizedBox(
-                child: Text(
-                  "New",
-                  style: TextStyle(
-                    color: Color(0xff46567A),
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24,
+                      );
+                    },
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: height * 0.01,
-            ),
-            Container(
-              height: height * 0.31,
-              child: Center(
+              SizedBox(
+                height: height * 0.03,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: SizedBox(
+                  child: Text(
+                    "Categories",
+                    style: TextStyle(
+                      color: Color(0xff46567A),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: height * 0.02,
+              ),
+              SizedBox(
+                height: height * 0.06,
                 child: ListView.builder(
-                  physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemCount: newData.length,
+                  physics: BouncingScrollPhysics(),
+                  itemCount: categories.length,
                   itemBuilder: (BuildContext context, int index) {
                     return NeumorphicButton(
-                      padding: EdgeInsets.all(0),
-                      onClick: () {
-                        print(index);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => WallpaperView(
-                                data: newData[index],
-                                tag: "hero2" + index.toString(),
-                              ),
-                            ));
-                      },
-                      margin: (index != 0)
-                          ? EdgeInsets.only(
-                              left: 8,
-                              right: (index == newData.length - 1) ? 20 : 8,
-                              top: 8,
-                              bottom: 8)
-                          : EdgeInsets.only(
-                              left: 20, right: 8, top: 8, bottom: 8),
-                      boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(16)),
-                      style: NeumorphicStyle(
-                          color: Color(0xFFEBEEFF),
-                          depth: 3,
-                          shadowLightColor: Color(0xFFFFFFFF),
-                          //shadowDarkColor: Color(0xff46567A),
-                          shadowDarkColor: Color(0xFF415FFF).withOpacity(0.6),
-                          intensity: 5,
-                          lightSource: LightSource.topLeft,
-                          shape: NeumorphicShape.flat),
-                      child: Container(
-                        color: Color(0xFFEBEEFF),
-                        width: width * 0.5,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                color: Color(0xFFEBEEFF),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Hero(
-                                    tag: "hero2" + index.toString(),
-                                    child: Image.network(
-                                      newData[index].wallUrl,
-                                      fit: BoxFit.cover,
+                        padding: EdgeInsets.all(0),
+                        onClick: () {
+                          print(categories[index]);
+                        },
+                        pressed: false,
+                        style: NeumorphicStyle(
+                            //  color: Color(0xFFECECF6),
+                            color: Colors.transparent,
+                            depth: 2,
+                            shadowDarkColor: Color(0xFF415FFF).withOpacity(0.6),
+                            intensity: 5,
+                            shape: NeumorphicShape.flat),
+                        margin: (index != 0)
+                            ? EdgeInsets.only(
+                                left: 8,
+                                right:
+                                    (index == categories.length - 1) ? 20 : 8,
+                                top: 8,
+                                bottom: 8)
+                            : EdgeInsets.only(
+                                left: 20, right: 8, top: 8, bottom: 8),
+                        boxShape: NeumorphicBoxShape.roundRect(
+                            BorderRadius.circular(8)),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 6),
+                          decoration: new BoxDecoration(
+                              gradient: new LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color(0xffF7F8FF),
+                              Color(0xffE7E8F3),
+                            ],
+                          )),
+                          child: Center(
+                            child: Text(
+                              categories[index],
+                              style: TextStyle(
+                                  color: Color(0xFF415FFF),
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ));
+                  },
+                ),
+              ),
+              SizedBox(
+                height: height * 0.02,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: SizedBox(
+                  child: Text(
+                    "New",
+                    style: TextStyle(
+                      color: Color(0xff46567A),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              Container(
+                height: height * 0.31,
+                child: Center(
+                  child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: newData.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return NeumorphicButton(
+                        padding: EdgeInsets.all(0),
+                        onClick: () {
+                          print(index);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => WallpaperView(
+                                  data: newData[index],
+                                  tag: "hero2" + index.toString(),
+                                ),
+                              ));
+                        },
+                        margin: (index != 0)
+                            ? EdgeInsets.only(
+                                left: 8,
+                                right: (index == newData.length - 1) ? 20 : 8,
+                                top: 8,
+                                bottom: 8)
+                            : EdgeInsets.only(
+                                left: 20, right: 8, top: 8, bottom: 8),
+                        boxShape: NeumorphicBoxShape.roundRect(
+                            BorderRadius.circular(16)),
+                        style: NeumorphicStyle(
+                            color: Colors.transparent,
+                            depth: 3,
+                            shadowLightColor: Color(0xFFFFFFFF),
+                            shadowDarkColor: Color(0xFF415FFF).withOpacity(0.6),
+                            intensity: 5,
+                            lightSource: LightSource.topLeft,
+                            shape: NeumorphicShape.flat),
+                        child: Container(
+                          decoration: new BoxDecoration(
+                              gradient: new LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color(0xffF7F8FF),
+                              Color(0xffE7E8F3),
+                            ],
+                          )),
+                          width: width * 0.5,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: Color(0xFFEBEEFF),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Hero(
+                                      tag: "hero2" + index.toString(),
+                                      child: Image.network(
+                                        newData[index].wallUrl,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
+                                height: height * 0.3 * 0.7,
                               ),
-                              height: height * 0.3 * 0.7,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Neumorphic(
-                                    padding: EdgeInsets.all(0),
-                                    boxShape: NeumorphicBoxShape.circle(),
-                                    style: NeumorphicStyle(
-                                        color: Color(0xFFE4E6F5),
-                                        depth: 2,
-                                        shape: NeumorphicShape.flat),
-                                    child: CircleAvatar(
-                                      backgroundColor: Color(0xFFE4E6F5),
-                                      child: Neumorphic(
-                                        padding: EdgeInsets.all(0),
-                                        style: NeumorphicStyle(
-                                            color: Color(0xFFEBEEFF),
-                                            depth: 0,
-                                            shape: NeumorphicShape.flat),
-                                        boxShape: NeumorphicBoxShape.circle(),
-                                        child: Hero(
-                                          tag: "a" + "hero2" + index.toString(),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(100.0),
-                                            child: Image.network(
-                                              newData[index].artistUrl,
-                                              fit: BoxFit.cover,
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: <Widget>[
+                                    Neumorphic(
+                                      padding: EdgeInsets.all(0),
+                                      boxShape: NeumorphicBoxShape.circle(),
+                                      style: NeumorphicStyle(
+                                          color: Color(0xFFE4E6F5),
+                                          depth: 2,
+                                          shape: NeumorphicShape.flat),
+                                      child: CircleAvatar(
+                                        backgroundColor: Color(0xFFE4E6F5),
+                                        child: Neumorphic(
+                                          padding: EdgeInsets.all(0),
+                                          style: NeumorphicStyle(
+                                              color: Color(0xFFEBEEFF),
+                                              depth: 0,
+                                              shape: NeumorphicShape.flat),
+                                          boxShape: NeumorphicBoxShape.circle(),
+                                          child: Hero(
+                                            tag: "a" +
+                                                "hero2" +
+                                                index.toString(),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(100.0),
+                                              child: Image.network(
+                                                newData[index].artistUrl,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: width * 0.5 * 0.05,
-                                  ),
-                                  Flexible(
-                                    child: Text(
-                                      newData[index].artistName,
-                                      style: TextStyle(
-                                        color: Color(0xff46567A),
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 18,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
+                                    SizedBox(
+                                      width: width * 0.5 * 0.05,
                                     ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
+                                    Flexible(
+                                      child: Text(
+                                        newData[index].artistName,
+                                        style: TextStyle(
+                                          color: Color(0xff46567A),
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 18,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: height * 0.03,
-            )
-          ],
+              SizedBox(
+                height: height * 0.03,
+              )
+            ],
+          ),
         ),
       ),
     );

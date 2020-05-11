@@ -36,27 +36,49 @@ class _WallpaperViewState extends State<WallpaperView> {
           left: 24,
           width: width * 0.12,
           height: width * 0.12,
-          child: NeumorphicButton(
-            padding: EdgeInsets.all(0),
-            child: Icon(
-              Icons.arrow_back,
-              size: width * 0.08,
+          child: Container(
+            decoration: new BoxDecoration(
+                borderRadius: BorderRadius.circular(100),
+                gradient: new LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.0, 1.0],
+                  colors: [
+                    Color(0xffE6E7ED),
+                    Color(0xffF7F8FA),
+                  ],
+                )),
+            child: NeumorphicButton(
+              padding: EdgeInsets.all(0),
+              child: Icon(
+                Icons.arrow_back,
+                size: width * 0.08,
+              ),
+              onClick: () => Navigator.of(context).pop(),
+              boxShape: NeumorphicBoxShape.circle(),
+              style: NeumorphicStyle(
+                  depth: 4,
+                  intensity: 0.4,
+                  shape: NeumorphicShape.flat,
+                  color: Colors.transparent,
+                  shadowDarkColor: Color(0xFF415FFF).withOpacity(1),
+                  shadowLightColor: Colors.white),
             ),
-            onClick: () => Navigator.of(context).pop(),
-            boxShape: NeumorphicBoxShape.circle(),
-            style: NeumorphicStyle(
-                depth: 4,
-                intensity: 0.4,
-                shape: NeumorphicShape.flat,
-                color: Color(0xFFEBEEFF),
-                shadowDarkColor: Color(0xFF415FFF).withOpacity(1),
-                shadowLightColor: Colors.white),
           ),
         ),
         Positioned(
           bottom: 0.0,
           child: Container(
-            color: Color(0xFFEBEEFF),
+            decoration: new BoxDecoration(
+                gradient: new LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.0, 1.0],
+              colors: [
+                Color(0xffF8F9FF),
+                Color(0xffE5E6F1),
+              ],
+            )),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -65,7 +87,7 @@ class _WallpaperViewState extends State<WallpaperView> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(
-                      width: 24,
+                      width: 32,
                     ),
                     Transform.scale(
                       child: Neumorphic(
@@ -125,7 +147,18 @@ class _WallpaperViewState extends State<WallpaperView> {
                     SizedBox(
                       width: 24,
                     ),
-                    SizedBox(
+                    Container(
+                      decoration: new BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          gradient: new LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            stops: [0.0, 1.0],
+                            colors: [
+                              Color(0xffE6E7ED),
+                              Color(0xffF7F8FA),
+                            ],
+                          )),
                       width: width * 0.14,
                       height: width * 0.14,
                       child: NeumorphicButton(
@@ -139,7 +172,8 @@ class _WallpaperViewState extends State<WallpaperView> {
                         boxShape: NeumorphicBoxShape.circle(),
                         style: NeumorphicStyle(
                           depth: 5,
-                          color: Color(0xFFEBEEFF),
+                          color: Colors.transparent,
+                          shape: NeumorphicShape.flat,
                           shadowDarkColor: Color(0xFF415FFF).withOpacity(0.8),
                         ),
                       ),
@@ -147,7 +181,18 @@ class _WallpaperViewState extends State<WallpaperView> {
                     SizedBox(
                       width: 24,
                     ),
-                    SizedBox(
+                    Container(
+                      decoration: new BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          gradient: new LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            stops: [0.0, 1.0],
+                            colors: [
+                              Color(0xffE6E7ED),
+                              Color(0xffF7F8FA),
+                            ],
+                          )),
                       width: width * 0.14,
                       height: width * 0.14,
                       child: NeumorphicButton(
@@ -162,7 +207,8 @@ class _WallpaperViewState extends State<WallpaperView> {
                         style: NeumorphicStyle(
                           depth: 5,
                           shadowDarkColor: Color(0xFF415FFF).withOpacity(0.8),
-                          color: Color(0xFFEBEEFF),
+                          color: Colors.transparent,
+                          shape: NeumorphicShape.flat,
                         ),
                       ),
                     ),
@@ -171,7 +217,7 @@ class _WallpaperViewState extends State<WallpaperView> {
                     ),
                     SizedBox(
                       width: width * 0.5,
-                      height: width * 0.1,
+                      height: width * 0.12,
                       child: NeumorphicButton(
                         padding: EdgeInsets.all(0),
                         child: Center(
