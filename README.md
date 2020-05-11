@@ -2,6 +2,8 @@
 
 A Neumorphic Wallpaper App Design Implemented In Flutter
 
+[Download APK](https://github.com/rajvaya/neuwall/raw/master/assets/app-release.apk)
+
 Package Used [Flutter-Neumorphic](https://pub.dev/packages/flutter_neumorphic)
 
 
