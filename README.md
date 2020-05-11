@@ -14,7 +14,7 @@ UI Design Credit  [Anshul Bhatia](https://dribbble.com/shots/11193924-Wallpaper-
 
 Design on 👉 [Dribbble](https://dribbble.com/shots/11193924-Wallpaper-App)
 
-# Screnshots
+# Screnshotsss
 
 ![SS1](https://github.com/rajvaya/neuwall/blob/master/assets/mockuped%20SS1.png?raw=true)
 
