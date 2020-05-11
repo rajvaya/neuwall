@@ -1,16 +1,14 @@
 # neuwall
 
-A new Flutter application.
+A Neumorphic Wallpaper App Design Implemented In Flutter
 
-## Getting Started
+![Mockup for feature A](https://cdn.dribbble.com/users/2044235/screenshots/11193924/media/d045609a3824b908f3d8aaf9a9c89064.jpg)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+UI Design Credit  [Anshul Bhatia](https://dribbble.com/shots/11193924-Wallpaper-App)
+Design on 👉 [Dribbble](https://dribbble.com/shots/11193924-Wallpaper-App)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Package Used [Flutter-Neumorphic](https://pub.dev/packages/flutter_neumorphic)
+
+
